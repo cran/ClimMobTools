@@ -1,13 +1,14 @@
 Package: ClimMobTools
 Type: Package
 Title: Tools for Crowdsourcing Citizen Science in Agriculture
-Version: 0.2-6
+Version: 0.2-7
 Authors@R: c(person("Kaue", "de Sousa", 
         email = "kaue.desousa@inn.no", role = c("aut", "cre"),
         comment = c(ORCID = "0000-0002-7571-7845")),
         person("Jacob", "van Etten", role = c("aut", "ctb"),
         comment = c(ORCID = "0000-0001-7554-2558")),
         person("Sam", "Dumble", role = c("aut", "ctb")),
+        person("Nicolas", "Greliche", role = c("aut", "ctb")),
         person("Brandon", "Madriz", role = c("aut","ctb")),
         person("Carlos", "Quiros", role = c("aut","ctb")))
 Maintainer: Kaue de Sousa <kaue.desousa@inn.no>
@@ -18,19 +19,20 @@ License: GPL-3
 Encoding: UTF-8
 LazyData: true
 Depends: R (>= 2.10)
-Imports: httr, jsonlite, Matrix, methods, nasapower, PlackettLuce,
-        raster, RSpectra, tibble, tidyr, utils
+Imports: httr, jsonlite, Matrix, methods, nasapower, PlackettLuce (>=
+        0.2-8), raster, RSpectra, tibble, tidyr, utils
 Suggests: psychotree, psychotools, qvcalc, knitr, rmarkdown, testthat
         (>= 2.1.0)
 Language: en-GB
 RoxygenNote: 6.1.1
 VignetteBuilder: knitr
 NeedsCompilation: no
-Packaged: 2019-08-07 10:09:54 UTC; kaued
+Packaged: 2019-09-12 15:07:34 UTC; kaued
 Author: Kaue de Sousa [aut, cre] (<https://orcid.org/0000-0002-7571-7845>),
   Jacob van Etten [aut, ctb] (<https://orcid.org/0000-0001-7554-2558>),
   Sam Dumble [aut, ctb],
+  Nicolas Greliche [aut, ctb],
   Brandon Madriz [aut, ctb],
   Carlos Quiros [aut, ctb]
 Repository: CRAN
-Date/Publication: 2019-08-07 16:00:02 UTC
+Date/Publication: 2019-09-12 15:40:05 UTC

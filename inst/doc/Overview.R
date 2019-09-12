@@ -6,6 +6,9 @@ knitr::opts_chunk$set(
   purl = TRAVIS
 )
 
+## ----cran, message=FALSE, eval=FALSE, echo=TRUE--------------------------
+#  install.packages("ClimMobTools")
+
 ## ----install, message=FALSE, eval=FALSE, echo=TRUE-----------------------
 #  library("devtools")
 #  
