@@ -1,38 +1,40 @@
 Package: ClimMobTools
 Type: Package
-Title: Tools for Crowdsourcing Citizen Science in Agriculture
-Version: 0.2-7
+Title: API Client for the 'ClimMob' Platform
+Version: 0.3.2
 Authors@R: c(person("Kaue", "de Sousa", 
         email = "kaue.desousa@inn.no", role = c("aut", "cre"),
-        comment = c(ORCID = "0000-0002-7571-7845")),
-        person("Jacob", "van Etten", role = c("aut", "ctb"),
+        comment = c(ORCID = "0000-0002-7571-7845")), 
+        person("Jacob", "van Etten", role = "aut",
         comment = c(ORCID = "0000-0001-7554-2558")),
-        person("Sam", "Dumble", role = c("aut", "ctb")),
-        person("Nicolas", "Greliche", role = c("aut", "ctb")),
-        person("Brandon", "Madriz", role = c("aut","ctb")),
-        person("Carlos", "Quiros", role = c("aut","ctb")))
-Maintainer: Kaue de Sousa <kaue.desousa@inn.no>
+        person("Brandon", "Madriz", role = "ctb",
+        comment = "API Client implementation"))
 URL: https://agrobioinfoservices.github.io/ClimMobTools/
 BugReports: https://github.com/agrobioinfoservices/ClimMobTools/issues
-Description: Toolkit for the 'ClimMob' platform in R. 'ClimMob' is an open source software for crowdsourcing citizen science in agriculture <https://climmob.net/climmob3/>. Developed by van Etten et al. (2019) <doi:10.1017/S0014479716000739>, it turns the research paradigm on its head; instead of a few researchers designing complicated trials to compare several technologies in search of the best solutions, it enables many farmers to carry out reasonably simple experiments that taken together can offer even more information. 'ClimMobTools' enables project managers to deep explore and analyse their 'ClimMob' data in R.
-License: GPL-3
+Description: API client for 'ClimMob', an open source software for crowdsourcing 
+    citizen science in agriculture under the 'tricot' method <https://climmob.net/climmob3/>. 
+    Developed by van Etten et al. (2019) <doi:10.1017/S0014479716000739>, it turns the 
+    research paradigm on its head; instead of a few researchers designing complicated 
+    trials to compare several technologies in search of the best solutions, 
+    it enables many farmers to carry out reasonably simple experiments that 
+    taken together can offer even more information. 'ClimMobTools' enables project 
+    managers to deep explore and analyse their 'ClimMob' data in R.
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
-Depends: R (>= 2.10)
-Imports: httr, jsonlite, Matrix, methods, nasapower, PlackettLuce (>=
-        0.2-8), raster, RSpectra, tibble, tidyr, utils
-Suggests: psychotree, psychotools, qvcalc, knitr, rmarkdown, testthat
-        (>= 2.1.0)
+Depends: R (>= 3.5.0)
+Imports: climatrends, httr, jsonlite, Matrix, methods, RSpectra,
+        tibble, utils
+Suggests: knitr, PlackettLuce (>= 0.2-8), rmarkdown, testthat (>=
+        2.1.0)
 Language: en-GB
-RoxygenNote: 6.1.1
+RoxygenNote: 7.0.2
 VignetteBuilder: knitr
 NeedsCompilation: no
-Packaged: 2019-09-12 15:07:34 UTC; kaued
+Packaged: 2020-03-16 13:32:48 UTC; kauefeitosadiasdesousa
 Author: Kaue de Sousa [aut, cre] (<https://orcid.org/0000-0002-7571-7845>),
-  Jacob van Etten [aut, ctb] (<https://orcid.org/0000-0001-7554-2558>),
-  Sam Dumble [aut, ctb],
-  Nicolas Greliche [aut, ctb],
-  Brandon Madriz [aut, ctb],
-  Carlos Quiros [aut, ctb]
+  Jacob van Etten [aut] (<https://orcid.org/0000-0001-7554-2558>),
+  Brandon Madriz [ctb] (API Client implementation)
+Maintainer: Kaue de Sousa <kaue.desousa@inn.no>
 Repository: CRAN
-Date/Publication: 2019-09-12 15:40:05 UTC
+Date/Publication: 2020-03-16 14:00:02 UTC

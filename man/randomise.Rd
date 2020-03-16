@@ -5,8 +5,7 @@
 \alias{randomize}
 \title{Randomised group of items}
 \usage{
-randomise(ncomp = 3, nobservers = NULL, nitems = NULL,
-  itemnames = NULL)
+randomise(ncomp = 3, nobservers = NULL, nitems = NULL, itemnames = NULL)
 }
 \arguments{
 \item{ncomp}{an integer for the number of items each observer compares}
@@ -37,10 +36,13 @@ ni <- 3
 no <- 10
 nv <- 4
 inames <- c("mango","banana","grape","apple")
-
+ 
 randomise(ncomp = ni,
           nobservers = no,
           nitems = nv,
           itemnames = inames)
           
+}
+\author{
+Jacob van Etten
 }

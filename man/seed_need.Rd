@@ -4,8 +4,7 @@
 \alias{seed_need}
 \title{Required seed amount in a tricot project}
 \usage{
-seed_need(nobservers = 100, ncomp = 3, nitems = 10, nseeds = 0.15,
-  unit = "kg")
+seed_need(nobservers = 100, ncomp = 3, nitems = 10, nseeds = 0.15, unit = "kg")
 }
 \arguments{
 \item{nobservers}{an integer for the number of observers}
@@ -41,4 +40,7 @@ seed_need(nobservers = 400,
           nitems = 9, 
           nseeds = 100,
           unit = "unit")
+}
+\author{
+Kauê de Sousa
 }

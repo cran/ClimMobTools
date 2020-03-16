@@ -1,4 +1,4 @@
-## ----setup, include=FALSE------------------------------------------------
+## ----setup, include=FALSE-----------------------------------------------------
 TRAVIS <- !identical(tolower(Sys.getenv("TRAVIS")), "true")
 knitr::opts_chunk$set(
   collapse = TRUE,
@@ -6,79 +6,53 @@ knitr::opts_chunk$set(
   purl = TRAVIS
 )
 
-## ----cran, message=FALSE, eval=FALSE, echo=TRUE--------------------------
-#  install.packages("ClimMobTools")
-
-## ----install, message=FALSE, eval=FALSE, echo=TRUE-----------------------
-#  library("devtools")
-#  
-#  devtools::install_github("agrobioinfoservices/ClimMobTools")
-#  
-
-## ----fetch, message=FALSE, eval=FALSE, echo=TRUE-------------------------
+## ----fetch, message=FALSE, eval=FALSE, echo=TRUE------------------------------
 #  library("ClimMobTools")
-#  library("tidyverse")
-#  library("magrittr")
 #  
 #  # the API key
 #  key <- "d39a3c66-5822-4930-a9d4-50e7da041e77"
 #  
-#  data <- ClimMobTools::getDataCM(key = key,
-#                                  project = "breadwheat",
-#                                  tidynames = TRUE)
+#  dt <- getDataCM(key = key,
+#                  project = "breadwheat",
+#                  tidynames = TRUE,
+#                  pivot.wider = TRUE,
+#                  as.data.frame = TRUE)
 #  
-#  # reshape the data into the wide format
-#  data %<>%
-#    filter(!str_detect(variable, "survey")) %>%
-#    group_by(id) %>%
-#    distinct(id, variable, value) %>%
-#    spread(variable, value) %>%
-#    ungroup()
 #  
+#  names(dt) <- gsub("firstassessment_|package_|lastassessment_|registration_", "",
+#                    names(dt))
 #  
 
-## ----temperature, message=FALSE, eval=FALSE, echo=TRUE-------------------
-#  # first we convert the lonlat into numeric
-#  # and the planting dates into Date
-#  data %<>%
-#    mutate(lon = as.numeric(lon),
-#           lat = as.numeric(lat),
-#           plantingdate = as.Date(plantingdate,
-#                                  format = "%Y-%m-%d"))
+## ----temperature, message=FALSE, eval=FALSE, echo=TRUE------------------------
+#  library("climatrends")
 #  
-#  # then we get the temperature indices
-#  temp <- temperature(data[c("lon","lat")],
-#                      day.one = data["plantingdate"],
-#                      span = 120)
+#  dt$plantingdate <- as.Date(dt$plantingdate, format = "%Y-%m-%d")
+#  dt$lon <- as.numeric(dt$lon)
+#  dt$lat <- as.numeric(dt$lat)
 #  
+#  temp <- temperature(dt[, c("lon","lat")],
+#                      day.one = dt[, "plantingdate"],
+#                      span = 80)
+#  
+#  temp
 
-## ----rain, message=FALSE, eval=FALSE, echo=TRUE--------------------------
-#  rain <- rainfall(data[c("lon","lat")],
-#                   day.one = data["plantingdate"],
-#                   span = 120)
-#  
-
-## ----rain2, message=FALSE, eval=FALSE, echo=TRUE-------------------------
-#  rain <- rainfall(data[c("lon","lat")],
-#                   day.one = data["plantingdate"],
-#                   span = 120,
-#                   days.before = 15)
-#  
-#  
-
-## ----plrankings, message=FALSE, eval=FALSE, echo=TRUE--------------------
-#  G <- build_rankings(data,
-#                      items = c("item_A","item_B","item_C"),
-#                      input = c("overallperf_pos","overallperf_neg"),
-#                      grouped.rankings = TRUE)
-#  
-#  
-
-## ----plmodel, message=FALSE, eval=FALSE, echo=TRUE-----------------------
+## ----plrankings, message=FALSE, eval=FALSE, echo=TRUE-------------------------
 #  library("PlackettLuce")
+#  #remotes::install_github("agrobioinfoservices/gosset", build_vignettes = TRUE)
+#  library("gosset")
 #  
-#  modeldata <- cbind(G, temp, rain)
+#  R <- rank_tricot(dt,
+#                   items = c("item_A","item_B","item_C"),
+#                   input = c("overallperf_pos","overallperf_neg"),
+#                   group = TRUE)
 #  
-#  tree <- pltree(G ~ ., data = modeldata, npseudo = 5)
+#  dat <- cbind(R, temp)
+#  
+#  pl <- pltree(R ~ maxNT + maxDT,
+#               data = dat)
+#  
+#  summary(pl)
+#  
+#  plot(pl)
 #  
 
