@@ -1,3 +1,12 @@
+ClimMobTools 0.3.5 (2020-05-08)
+=========================
+### CHANGES IN BEHAVIOUR
+* Imports 'PlackettLuce' and 'climatrends' by default
+* Use `httr::RETRY()` instead of `httr::GET()` as suggested by Anna Vasylytsya
+* A `print()` method is added
+* New integration with the 'testing' server enabling to gather data from this server with the argument `server`
+* Minor changes in documentation
+
 ClimMobTools 0.3.2 (2020-03-16)
 =========================
 

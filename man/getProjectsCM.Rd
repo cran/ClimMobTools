@@ -4,11 +4,13 @@
 \alias{getProjectsCM}
 \title{Get ClimMob projects}
 \usage{
-getProjectsCM(key = NULL)
+getProjectsCM(key = NULL, ...)
 }
 \arguments{
 \item{key}{a character for the user's application programming 
 interface (API) key}
+
+\item{...}{additional arguments passed to methods. See details}
 }
 \value{
 A data frame with the ClimMob projects 
@@ -24,13 +26,19 @@ A data frame with the ClimMob projects
  of the last registration}
 }
 \description{
-Get ClimMob projects using an application programming interface (API) key
+Fetch the status of ClimMob projects
+}
+\details{
+Additional arguments: 
+
+\code{server}: a character to select from which server the data will be retrieved, either 
+ "prodution" (the default) or "testing"
 }
 \examples{
 \dontrun{ 
 # This function will not work without an API key  
 # the user API key can be obtained once a free ClimMob account 
-# is created via https://climmob.net/climmob3/
+# is created via https://climmob.net/
 
 my_key <- "add_your_key"
 
@@ -40,8 +48,12 @@ getProjectsCM(key = my_key)
 
 }
 \seealso{
-\url{https://climmob.net/climmob3/}
+ClimMob website \url{https://climmob.net/}
+
+Other GET functions: 
+\code{\link{getDataCM}()}
 }
 \author{
 Kauê de Sousa
 }
+\concept{GET functions}

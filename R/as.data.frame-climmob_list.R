@@ -5,7 +5,6 @@
 #'  where each observer is a row
 #' @param ... additional arguments passed to methods
 #' @importFrom methods as
-#' @importFrom climatrends temperature rainfall GDD ETo
 #' @method as.data.frame CM_list
 #' @export
 as.data.frame.CM_list <- function(x, 
@@ -293,6 +292,8 @@ as.data.frame.CM_list <- function(x,
   }
   
   row.names(output) <- seq_along(output$id)
+  
+  class(output) <- union("CM_df", class(output))
   
   return(output)
   

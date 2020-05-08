@@ -27,7 +27,7 @@ interface (API) key}
 where each observer is a row}
 }
 \value{
-An object of class 'CM_list' or a data.frame with the 
+An object of class 'CM_list' or a data.frame with class "CM_df" with the 
 variables:
 \item{id}{the participant's package id}
 \item{moment}{the data collection moment}
@@ -38,12 +38,18 @@ variables:
 Fetch the data from a ClimMob project using an application 
  programming interface (API) key
 }
+\details{
+Additional arguments: 
+
+\code{server}: a character to select from which server the data will be retrieved, either 
+ "prodution" (the default) or "testing"
+}
 \examples{
 \dontrun{
 
 # This function will not work without an API key  
 # the user API key can be obtained once a free ClimMob account 
-# is created via https://climmob.net/climmob3/
+# is created via https://climmob.net/
 
 my_key <- "add_your_key"
 my_project <- "my_climmob_project"
@@ -54,8 +60,12 @@ data <- getDataCM(key = my_key, project = my_project)
 
 }
 \seealso{
-\code{\link{getProjectsCM}}
+ClimMob website \url{https://climmob.net/}
+
+Other GET functions: 
+\code{\link{getProjectsCM}()}
 }
 \author{
 Kauê de Sousa
 }
+\concept{GET functions}
