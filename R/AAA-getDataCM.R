@@ -19,8 +19,8 @@
 #' @details 
 #' Additional arguments: 
 #' 
-#' \code{server}: a character to select from which server the data will be retrieved, either 
-#'  "prodution" (the default) or "testing"
+#' \code{server}: a character to select from which server the data will be retrieved,
+#'   "production" (the default) or an alternative server 
 #' 
 #' @examples
 #' \dontrun{
@@ -40,26 +40,19 @@
 #' @importFrom httr accept_json content RETRY
 #' @importFrom jsonlite fromJSON
 #' @export
-getDataCM <- function(key = NULL, 
-                      project = NULL, 
-                      as.data.frame = TRUE, ...){
+getDataCM <- function(key, 
+                      project,
+                      as.data.frame = TRUE, 
+                      server = NULL, ...){
+  
   
   dots <- list(...)
-  server <- dots[["server"]]
   
-  if (is.null(server)) {
-    server <- "production"
-  }
+  url <- "https://climmob.net/climmob3/api/readDataOfProject?Body={}&Apikey={}"
   
-  if (server == "production") {
+  if (!is.null(server)) {
     
-    url <- "https://climmob.net/climmob3/api/readDataOfProject?Body={}&Apikey={}"
-    
-  }
-  
-  if (server == "testing") {
-    
-    url <- "https://testing.climmob.net/climmob3/api/readDataOfProject?Body={}&Apikey={}"
+    url <- gsub("https://", paste0("https://", server, "."), url)
     
   }
   
