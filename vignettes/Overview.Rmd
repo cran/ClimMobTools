@@ -28,7 +28,7 @@ knitr::opts_chunk$set(
 
 ## Overview
 
-**ClimMobTools** the API Client for the 'ClimMob' platform in R. [ClimMob](https://climmob.net/) is an open source software for crowdsourcing citizen science in agriculture under the tricot approach[@vanEtten2019tricot]. The approach aims the rapid assessment of on-farm evaluation trails in small-scale agriculture. Tricot turns the research paradigm on its head; instead of a few researchers designing complicated trials to compare several technologies in search of the best solutions, it enables many farmers to carry out reasonably simple experiments that taken together can offer even more information.
+**ClimMobTools** the API Client for the 'ClimMob' platform in R. [ClimMob](https://climmob.net/) is an open source software for crowdsourcing citizen science in agriculture under the tricot approach[@vanEtten2019tricot]. The approach aims the rapid assessment of technologies in the target environment. Tricot turns the research paradigm on its head; instead of a few researchers designing complicated trials to compare several technologies in search of the best solutions, it enables many participants to carry out reasonably simple experiments that taken together can offer even more information.
 
 # Usage
 
@@ -40,11 +40,9 @@ library("ClimMobTools")
 # the API key
 key <- "d39a3c66-5822-4930-a9d4-50e7da041e77"
 
-dt <- getDataCM(key = key, 
+dt <- getDataCM(key = key,
                 project = "breadwheat",
-                tidynames = TRUE,
-                pivot.wider = TRUE, 
-                as.data.frame = TRUE)
+                pivot.wider = TRUE)
 
 
 names(dt) <- gsub("firstassessment_|package_|lastassessment_|registration_", "",
@@ -58,10 +56,11 @@ We can add environmental covariates from package [climatrends](https://CRAN.R-pr
 
 ```{r temperature, message=FALSE, eval=FALSE, echo=TRUE}
 library("climatrends")
+library("nasapower")
 
 dt$plantingdate <- as.Date(dt$plantingdate, format = "%Y-%m-%d")
-dt$lon <- as.numeric(dt$lon)
-dt$lat <- as.numeric(dt$lat)
+dt$lon <- as.numeric(dt$farm_geo_longitude)
+dt$lat <- as.numeric(dt$farm_geo_latitude)
 
 temp <- temperature(dt[, c("lon","lat")], 
                     day.one = dt[, "plantingdate"],

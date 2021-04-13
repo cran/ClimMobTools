@@ -5,7 +5,7 @@
 \alias{as.data.frame.CM_list}
 \title{Get ClimMob data}
 \usage{
-getDataCM(key, project, as.data.frame = TRUE, server = NULL, ...)
+getDataCM(key, project, as.data.frame = TRUE, server = "climmob3", ...)
 
 \method{as.data.frame}{CM_list}(x, ..., tidynames = TRUE, pivot.wider = FALSE)
 }
@@ -18,7 +18,7 @@ interface (API) key}
 \item{as.data.frame}{logical, to return a data frame}
 
 \item{server}{optional, a character to select from which server
-the data will be retrieved}
+the data will be retrieved. See details}
 
 \item{...}{additional arguments passed to methods}
 
@@ -42,10 +42,14 @@ Fetch the data from a ClimMob project using an application
  programming interface (API) key
 }
 \details{
-Additional arguments: 
+\code{server}: the default server is "climmob" used for clients of 
+https://climmob.net/climmob3/, other options are:
 
-\code{server}: a character to select from which server the data will be retrieved,
-  "production" (the default) or an alternative server
+ "avisa" for clients of https://avisa.climmob.net/ 
+ 
+ "rtb" for clients of https://rtb.climmob.net/
+ 
+ "testing" for clients of https://testing.climmob.net/climmob3/
 }
 \examples{
 \dontrun{
@@ -66,6 +70,7 @@ data <- getDataCM(key = my_key, project = my_project)
 ClimMob website \url{https://climmob.net/}
 
 Other GET functions: 
+\code{\link{getProjectProgress}()},
 \code{\link{getProjectsCM}()}
 }
 \author{

@@ -1,4 +1,16 @@
-ClimMobTools 0.3.7 (Unreleased)
+ClimMobTools 0.3.9 (2021-04-12)
+=========================
+
+### IMPROVEMENTS
+
+* New function `getProjectProgress()` returns the progress in a given project
+
+### BUG FIXES
+
+* Fix the function to set the URLs for alternative servers in ClimMob
+
+
+ClimMobTools 0.3.7 (2021-03-22)
 =========================
 
 ### IMPROVEMENTS
