@@ -5,16 +5,29 @@
 \alias{randomize}
 \title{Randomised group of items}
 \usage{
-randomise(ncomp = 3, nobservers = NULL, nitems = NULL, itemnames = NULL)
+randomise(
+  npackages,
+  itemnames,
+  ncomp = 3,
+  availability = NULL,
+  proportions = NULL,
+  ...
+)
 }
 \arguments{
-\item{ncomp}{an integer for the number of items each observer compares}
-
-\item{nobservers}{an integer for the number of observers}
-
-\item{nitems}{an integer for the number of items tested in the project}
+\item{npackages}{an integer for the number of trial packages to be produced}
 
 \item{itemnames}{a character for the name of items tested in the project}
+
+\item{ncomp}{an integer for the number of items to be assigned to each package}
+
+\item{availability}{optional, a vector with integers indicating the 
+number of packages available for each \var{itemnames}}
+
+\item{proportions}{optional, a numeric vector with the desired proportions
+for each \var{itemnames}}
+
+\item{...}{additional arguments passed to methods}
 }
 \value{
 A dataframe with the randomised design
@@ -32,15 +45,19 @@ combinations and is A-optimal. Then this pool is ordered to make subsets of
 consecutive combinations also relatively balanced and A-optimal
 }
 \examples{
-ni <- 3
-no <- 10
-nv <- 4
-inames <- c("mango","banana","grape","apple")
- 
-randomise(ncomp = ni,
-          nobservers = no,
-          nitems = nv,
-          itemnames = inames)
+ncomp <- 3
+npackages <- 100
+itemnames <- c("apple","banana","grape","mango", "orange", "kiwi", "pineapple")
+availability <- c(50, 50, 150, 150, 150, 150, 20)
+
+table(unlist(randomise(ncomp = ncomp,
+                       npackages = npackages,
+                       itemnames = itemnames)))
+
+table(unlist(randomise(ncomp = ncomp,
+                       npackages = npackages,
+                       itemnames = itemnames,
+                       availability = availability)))
           
 }
 \author{
