@@ -1,3 +1,21 @@
+ClimMobTools 0.4.5 (2021-02-14)
+=========================
+
+### IMPROVEMENTS
+
+* Add argument `userowner =` to  `getDataCM()` to specify the owner of a given ClimMob project
+
+
+
+ClimMobTools 0.4.3 (2021-11-20)
+=========================
+
+### BUG FIXES
+
+* Fix an issue in `randomise()` to check for unbalanced designs
+* Remove dependency to "PlackettLuce" and "climatrends" to avoid errors in CRAN check for Windows
+
+
 ClimMobTools 0.4.2 (2021-11-08)
 =========================
 

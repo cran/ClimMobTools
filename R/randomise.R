@@ -23,18 +23,18 @@
 #' @return A dataframe with the randomised design
 #' @examples 
 #' ncomp <- 3
-#' npackages <- 100
-#' itemnames <- c("apple","banana","grape","mango", "orange", "kiwi", "pineapple")
-#' availability <- c(50, 50, 150, 150, 150, 150, 20)
+#' npackages <- 20
+#' itemnames <- c("apple","banana","grape","mango", "orange")
+#' availability <- c(5, 8, 50, 50, 50)
 #' 
-#' table(unlist(randomise(ncomp = ncomp,
-#'                        npackages = npackages,
-#'                        itemnames = itemnames)))
+#' randomise(ncomp = ncomp,
+#'           npackages = npackages,
+#'           itemnames = itemnames)
 #' 
-#' table(unlist(randomise(ncomp = ncomp,
-#'                        npackages = npackages,
-#'                        itemnames = itemnames,
-#'                        availability = availability)))
+#' randomise(ncomp = ncomp,
+#'           npackages = npackages,
+#'           itemnames = itemnames,
+#'           availability = availability)
 #'           
 #' @aliases randomize
 #' @importFrom Matrix Diagonal
@@ -71,6 +71,9 @@ randomise <- function(npackages,
   nneeded <- npackages * ncomp
   
   if (!is.null(availability)) {
+    
+    maxav <- which.max(availability)[1]
+    availability[maxav] <- availability[maxav] + 1
     
     if (sum(availability) < nneeded) {
       stop("availability is not sufficient: smaller than npackages * ncomp \n")
@@ -445,6 +448,20 @@ randomise <- function(npackages,
                                  paste0("item_", LETTERS[1:ncomp]))
   
   finalresults <- as.data.frame(finalresults, stringsAsFactors = FALSE)
+  
+  r <- table(unlist(finalresults))[itemnames] 
+  
+  if (!all(r <= availability)) {
+    
+    few <- itemnames[!r <= availability]
+    nfew <- availability[!r <= availability]
+    nmin <- r[!r <= availability]
+    
+    stop("You indicated the availability of ", paste(nfew, collapse = ", "), " packages for ", 
+         paste(few, collapse = ", "), " but you require a minimum of ", 
+         paste(nmin, collapse = ", "), " for the given items \n" )
+    
+  }
   
   class(finalresults) <- union("CM_df", class(finalresults))
   

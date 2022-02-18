@@ -3,21 +3,23 @@
 #' Build a buffer around the a set of geographical coordinates 
 #'  and take a random point around the buffer. The function is 
 #'  used to omit the precise location of tricot participants 
-#'  but keeping a close distance to its agro-environment 
+#'  but keeping a close distance to its agro-environment
+#'   
 #' @param lonlat a data.frame or matrix with geographical coordinates long lat
 #' @param dist numeric, buffer distance for all \var{lonlat}
 #' @param nQuadSegs integer, number of segments per quadrant
 #' @param ... further arguments passed to \code{\link[sf]{sf}} methods
+#' @return A data frame with the anonymised coordinates long lat
 #' @examples 
 #' xy <- matrix(c(11.097799, 60.801090,
 #'                11.161298, 60.804199,
 #'                11.254428, 60.822457),
 #'              nrow = 3, ncol = 2, byrow = TRUE)
 #' 
-#' rmGeoIndentity(xy)
+#' rmGeoIdentity(xy)
 #' 
-#' # the function handles NAs by keeping then 
-#' # in a logic vector to reconstruct the matrix
+#' # the function also handles NAs
+#' 
 #' xy2 <- matrix(c(11.097799, 60.801090,
 #'                 NA, NA,
 #'                 11.161298, 60.804199,
@@ -25,11 +27,11 @@
 #'                 11.254428, NA),
 #'               nrow = 5, ncol = 2, byrow = TRUE)
 #' 
-#' rmGeoIndentity(xy2)
+#' rmGeoIdentity(xy2)
 #'  
 #' @importFrom sf st_point st_sfc st_buffer st_sample
 #' @export
-rmGeoIndentity <- function(lonlat, dist = 0.015, nQuadSegs = 2L, ...){
+rmGeoIdentity <- function(lonlat, dist = 0.015, nQuadSegs = 2L, ...){
   
   lonlat <- as.matrix(lonlat)
   
@@ -76,7 +78,7 @@ rmGeoIndentity <- function(lonlat, dist = 0.015, nQuadSegs = 2L, ...){
   
   r <- as.data.frame(r)
   
-  names(r) <- c("x", "y")
+  names(r) <- c("long", "lat")
   
   return(r)
   

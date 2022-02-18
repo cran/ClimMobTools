@@ -8,6 +8,7 @@
 getDataCM(
   key,
   project,
+  userowner,
   as.data.frame = TRUE,
   as.text = FALSE,
   server = "climmob3",
@@ -21,6 +22,8 @@ getDataCM(
 interface (API) key}
 
 \item{project}{a character for the project id}
+
+\item{userowner}{a character for user name of project's owner}
 
 \item{as.data.frame}{logical, to return a data frame}
 
@@ -52,28 +55,26 @@ Fetch the data from a ClimMob project using an application
 }
 \details{
 \code{server}: the default server is "climmob" used for clients of 
-https://climmob.net/climmob3/, other options are:
+\url{https://climmob.net/climmob3/}, other options are:
 
- "avisa" for clients of https://avisa.climmob.net/ 
+ "1000farms" for clients of \url{https://1000farms.climmob.net/} 
  
- "rtb" for clients of https://rtb.climmob.net/
- 
- "testing" for clients of https://testing.climmob.net/climmob3/
+ "rtb" for clients of \url{https://rtb.climmob.net/}
 }
 \examples{
-\dontrun{
+\dontshow{if (interactive()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
 
-# This function will not work without an API key  
-# the user API key can be obtained once a free ClimMob account 
+# This function only works with an API key
+# the API key can be obtained once a free ClimMob account
 # is created via https://climmob.net/
 
-my_key <- "add_your_key"
-my_project <- "my_climmob_project"
+my_key <- "92cec84d-44f5-4858-9ef0-bd872496311c"
 
-data <- getDataCM(key = my_key, project = my_project)
-
-}
-
+getDataCM(key = my_key,
+          project = "testmark",
+          userowner = "kauedesousa",
+          server = "testing")
+\dontshow{\}) # examplesIf}
 }
 \seealso{
 ClimMob website \url{https://climmob.net/}
