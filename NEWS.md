@@ -1,10 +1,17 @@
+ClimMobTools 0.4.6 (2022-08-11)
+=========================
+### IMPROVEMENTS
+
+* Adds the function `getTraitList()`
+* Fix the call in `getProjectsCM()` to adapt to the new version of ClimMob
+
 ClimMobTools 0.4.5 (2021-02-14)
 =========================
 
 ### IMPROVEMENTS
 
 * Add argument `userowner =` to  `getDataCM()` to specify the owner of a given ClimMob project
-
+* Fix API call `getProjectsCM()`
 
 
 ClimMobTools 0.4.3 (2021-11-20)

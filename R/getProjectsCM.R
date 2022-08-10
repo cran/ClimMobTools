@@ -39,7 +39,6 @@
   
 }
 
-
 #' Get ClimMob projects 
 #'
 #' Fetch the status of ClimMob projects
@@ -56,8 +55,6 @@
 #' \url{https://climmob.net/climmob3/}, other options are:
 #' 
 #'  "1000farms" for clients of \url{https://1000farms.climmob.net/} 
-#'  
-#'  "rtb" for clients of \url{https://rtb.climmob.net/}
 #' 
 #' @return A data.frame with the variables:
 #' \item{project_id}{the project's id}
@@ -97,22 +94,17 @@ getProjectsCM <- function(key, server = "climmob3", ...){
     return(cat("No project associated with this API key \n"))
   }
   
-  progress <- dat$progress
-  
   owner <- dat$owner
   
   names(owner) <- paste0("owner_", names(owner))
   
-  dat <- cbind(dat, progress, owner)
+  dat <- cbind(dat, owner)
   
-  dat <- dat[,c("project_cod", "project_name", "owner_user_name", "project_cnty",
-                 "project_regstatus","project_creationdate")]
+  dat <- dat[,c("project_cod", "project_name", "owner_user_name", 
+                "project_cnty", "project_creationdate")]
 
   names(dat) <- c("project_id", "project_name", "user_owner",
-                  "country", "status","creation_date")
-  
-  dat$status <- with(dat, ifelse(status == 1, "active",
-                                 ifelse(status == 2, "concluded", "not_started")))
+                  "country", "creation_date")
   
   dat$creation_date <- with(dat, as.Date(creation_date, origin = "1970-01-01"))
 
