@@ -1,5 +1,6 @@
 ClimMobTools 0.4.6 (2022-08-11)
 =========================
+
 ### IMPROVEMENTS
 
 * Adds the function `getTraitList()`
