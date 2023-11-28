@@ -1,7 +1,7 @@
 Package: ClimMobTools
 Type: Package
 Title: API Client for the 'ClimMob' Platform
-Version: 1.0
+Version: 1.1
 Authors@R: c(person("Kauê", "de Sousa", 
         email = "desousa.kaue@gmail.com", 
         role = c("aut", "cre"),
@@ -13,7 +13,7 @@ URL: https://agrdatasci.github.io/ClimMobTools/
 BugReports: https://github.com/agrdatasci/ClimMobTools/issues
 Description: API client for 'ClimMob', an open source software for decentralized 
     large-N trials with the 'tricot' approach <https://climmob.net/>. 
-    Developed by van Etten et al. (2016) <doi:10.1017/S0014479716000739>, it turns the 
+    Developed by van Etten et al. (2019) <doi:10.1017/S0014479716000739>, it turns the 
     research paradigm on its head; instead of a few researchers designing complicated 
     trials to compare several technologies in search of the best solutions for the 
     target environment, it enables many participants to carry out reasonably simple 
@@ -30,10 +30,10 @@ Language: en-US
 RoxygenNote: 7.2.1
 VignetteBuilder: knitr
 NeedsCompilation: no
-Packaged: 2023-11-09 19:50:39 UTC; kauefeitosadiasdesousa
+Packaged: 2023-11-28 11:00:47 UTC; kauefeitosadiasdesousa
 Author: Kauê de Sousa [aut, cre] (<https://orcid.org/0000-0002-7571-7845>),
   Jacob van Etten [aut] (<https://orcid.org/0000-0001-7554-2558>),
   Brandon Madriz [aut]
 Maintainer: Kauê de Sousa <desousa.kaue@gmail.com>
 Repository: CRAN
-Date/Publication: 2023-11-09 20:10:02 UTC
+Date/Publication: 2023-11-28 11:20:03 UTC
