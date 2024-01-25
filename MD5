@@ -1,10 +1,10 @@
-5eb1d366875abde2d4427752654c8722 *DESCRIPTION
+771f8e6b5a796d05d8366cf3955bbb62 *DESCRIPTION
 398933e3f6ca28d6467d0b23f3eda7cb *LICENSE
 3e6ed822e51a6eff32a1dd0711d588a0 *NAMESPACE
-ca0e06412b18ca185e6966ecb575bf87 *NEWS.md
+3d7d4c5e244c98d47c78a2842d369be4 *NEWS.md
 54ba6347f83942bcabedfb9f25caa506 *R/AAA-getDataCM.R
 e64928d077dc3630fb31d0b4fec85c29 *R/ClimMobTools.R
-349261a0afad5a3115851e2b76a4db33 *R/as.data.frame-climmob_list.R
+a43dd11b029badce9f15d0cc183083f8 *R/as.data.frame-climmob_list.R
 709675babd75f1210641021bd201307a *R/getProjectProgress.R
 03a860af5507bb9ea00f8549e09d9ca1 *R/getProjectsCM.R
 10938be0bc51ad4239fc1ade956fe638 *R/getTraitList.R
@@ -19,6 +19,9 @@ e1f6689dd5a55a01758f870d2720f2b0 *build/vignette.rds
 125b7e2a42dde50dadc8da17b0649b55 *inst/doc/Overview.R
 0064f1680c099de229d7c5f362ace745 *inst/doc/Overview.Rmd
 0dc48fb552dd23adff93cbfa64cad58c *inst/doc/Overview.html
+472c4fc55ec7fe956c799e05487eb330 *inst/paper/paper.bib
+dc326666245f1613dff7874cf0861dd4 *inst/paper/paper.log
+e23cd3ee1177bd4c5ece7c45db78b2f3 *inst/paper/paper.md
 d97a9ef83207cae8bc9e8dfd77d58173 *inst/vector/ClimMobTools-hex.svg
 b4921ea138a6ca8d196ef4c966bc6859 *inst/vector/PlackettLuce-hex.svg
 547e3923d080414bb7f03024dd48493e *man/ClimMobTools.Rd

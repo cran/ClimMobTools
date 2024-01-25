@@ -1,14 +1,14 @@
 Package: ClimMobTools
 Type: Package
 Title: API Client for the 'ClimMob' Platform
-Version: 1.1
+Version: 1.2
 Authors@R: c(person("Kauê", "de Sousa", 
         email = "desousa.kaue@gmail.com", 
         role = c("aut", "cre"),
         comment = c(ORCID = "0000-0002-7571-7845")), 
         person("Jacob", "van Etten", role = "aut",
         comment = c(ORCID = "0000-0001-7554-2558")),
-        person("Brandon", "Madriz", role = "aut"))
+        person("Brandon", "Madriz", role = "ctb"))
 URL: https://agrdatasci.github.io/ClimMobTools/
 BugReports: https://github.com/agrdatasci/ClimMobTools/issues
 Description: API client for 'ClimMob', an open source software for decentralized 
@@ -30,10 +30,10 @@ Language: en-US
 RoxygenNote: 7.2.1
 VignetteBuilder: knitr
 NeedsCompilation: no
-Packaged: 2023-11-28 11:00:47 UTC; kauefeitosadiasdesousa
+Packaged: 2024-01-25 20:50:52 UTC; kauefeitosadiasdesousa
 Author: Kauê de Sousa [aut, cre] (<https://orcid.org/0000-0002-7571-7845>),
   Jacob van Etten [aut] (<https://orcid.org/0000-0001-7554-2558>),
-  Brandon Madriz [aut]
+  Brandon Madriz [ctb]
 Maintainer: Kauê de Sousa <desousa.kaue@gmail.com>
 Repository: CRAN
-Date/Publication: 2023-11-28 11:20:03 UTC
+Date/Publication: 2024-01-25 21:10:02 UTC
