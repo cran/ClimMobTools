@@ -2,8 +2,8 @@
 % Please edit documentation in R/ClimMobTools.R
 \docType{package}
 \name{ClimMobTools}
-\alias{ClimMobTools}
 \alias{ClimMobTools-package}
+\alias{ClimMobTools}
 \title{API Client for the 'ClimMob' platform in R}
 \description{
 \if{html}{\figure{logo.png}{options: style='float: right' alt='logo' width='120'}}
@@ -19,8 +19,6 @@ API client for 'ClimMob', an open source software for decentralized large-N tria
  \url{https://agrdatasci.github.io/ClimMobTools/}}
 \item{Report bugs: 
  \url{https://github.com/agrdatasci/ClimMobTools/issues}}
-\item{ClimMob Platform: 
- \url{https://climmob.net}}
 \item{The tricot user guide: 
  \url{https://hdl.handle.net/10568/109942}}
 }

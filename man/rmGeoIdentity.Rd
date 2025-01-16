@@ -16,17 +16,17 @@ rmGeoIdentity(longlat, dist = 0.015, nQuadSegs = 2L, ...)
 \item{...}{further arguments passed to \code{\link[sf]{sf}} methods}
 }
 \value{
-A data frame with the random coordinates long lat whithin a pre-defined buffer
+A data frame with the random coordinates long lat within the buffer
 }
 \description{
 Build a buffer around the a set of geographical coordinates 
  and take a random point around the buffer. The function is 
  used to omit the precise location of tricot participants 
- but keeping a close distance to its agro-environment
+ but keeping a close distance to the trial environment.
 }
 \examples{
 \dontshow{if (interactive()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
-xy <- matrix(c(11.097799, 60.801090,
+xy = matrix(c(11.097799, 60.801090,
                11.161298, 60.804199,
                11.254428, 60.822457),
              nrow = 3, ncol = 2, byrow = TRUE)
@@ -35,7 +35,7 @@ rmGeoIdentity(xy)
 
 #' the function also handles NAs
 
-xy2 <- matrix(c(11.097799, 60.801090,
+xy2 = matrix(c(11.097799, 60.801090,
                 NA, NA,
                 11.161298, 60.804199,
                 11.254428, 60.822457,

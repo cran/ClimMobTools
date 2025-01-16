@@ -7,11 +7,9 @@
 getProjectsCM(key, server = "climmob3", ...)
 }
 \arguments{
-\item{key}{a character for the user's application programming 
-interface (API) key}
+\item{key}{character, the user's API key}
 
-\item{server}{optional, a character to select from which server
-the data will be retrieved. See details}
+\item{server}{character, to indicate from which server the data will be retrieved. See details}
 
 \item{...}{additional arguments passed to methods. See details}
 }
@@ -36,17 +34,14 @@ Fetch the status of ClimMob projects
 \examples{
 \dontshow{if (interactive()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
 # This function only works with an API key
-# the API key can be obtained once a free ClimMob account
-# is created via https://climmob.net/
+# the API key can be obtained from your ClimMob account
 
-my_key <- "ff05a174-28d0-4a40-ab5a-35dc486133a6"
+my_key = "ff05a174-28d0-4a40-ab5a-35dc486133a6"
 
 getProjectsCM(key = my_key, server = "1000FARMS")
 \dontshow{\}) # examplesIf}
 }
 \seealso{
-ClimMob website \url{https://climmob.net/}
-
 Other GET functions: 
 \code{\link{getDataCM}()},
 \code{\link{getProjectProgress}()}
