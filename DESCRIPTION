@@ -1,7 +1,7 @@
 Package: ClimMobTools
 Type: Package
 Title: API Client for the 'ClimMob' Platform
-Version: 1.4
+Version: 1.5
 Authors@R: c(person("Kauê", "de Sousa", 
         email = "desousa.kaue@gmail.com", 
         role = c("aut", "cre"),
@@ -24,16 +24,16 @@ Encoding: UTF-8
 Depends: R (>= 3.5.0)
 Imports: httr, jsonlite, lpSolve, Matrix, methods, RSpectra, stats,
         utils
-Suggests: climatrends, gosset, knitr, nasapower, rmarkdown, sf,
-        PlackettLuce, testthat (>= 2.1.0)
+Suggests: climatrends, gosset, knitr, rmarkdown, sf, PlackettLuce,
+        testthat (>= 2.1.0)
 Language: en-US
 RoxygenNote: 7.3.2
 VignetteBuilder: knitr
 NeedsCompilation: no
-Packaged: 2025-01-16 11:05:41 UTC; kauefeitosadiasdesousa
+Packaged: 2025-03-31 12:08:36 UTC; kauefeitosadiasdesousa
 Author: Kauê de Sousa [aut, cre] (<https://orcid.org/0000-0002-7571-7845>),
   Jacob van Etten [aut] (<https://orcid.org/0000-0001-7554-2558>),
   Brandon Madriz [aut]
 Maintainer: Kauê de Sousa <desousa.kaue@gmail.com>
 Repository: CRAN
-Date/Publication: 2025-01-16 11:20:02 UTC
+Date/Publication: 2025-03-31 13:00:02 UTC

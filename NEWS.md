@@ -1,4 +1,11 @@
-ClimMobTools 1.3 (2025-01-15)
+ClimMobTools 1.5 (2025-03-31)
+=========================
+
+### CHANGES IN BEHAVIOUR
+
+* `getProjectsCM()` adds a new variable in the output `project_code` that will represent the previous `project_id`. The new variable `project_id` will represent the id from the ClimMob server database not the id from the user list of projects. 
+
+ClimMobTools 1.4 (2025-01-15)
 =========================
 
 ### BUG FIXES
