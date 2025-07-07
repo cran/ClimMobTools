@@ -1,7 +1,7 @@
 Package: ClimMobTools
 Type: Package
 Title: API Client for the 'ClimMob' Platform
-Version: 1.6
+Version: 1.6.1
 Authors@R: c(person("Kauê", "de Sousa", 
         email = "desousa.kaue@gmail.com", 
         role = c("aut", "cre"),
@@ -30,11 +30,11 @@ Language: en-US
 RoxygenNote: 7.3.2
 VignetteBuilder: knitr
 NeedsCompilation: no
-Packaged: 2025-07-07 10:06:11 UTC; kauefeitosadiasdesousa
+Packaged: 2025-07-07 11:42:08 UTC; kauefeitosadiasdesousa
 Author: Kauê de Sousa [aut, cre] (ORCID:
     <https://orcid.org/0000-0002-7571-7845>),
   Jacob van Etten [aut] (ORCID: <https://orcid.org/0000-0001-7554-2558>),
   Brandon Madriz [aut]
 Maintainer: Kauê de Sousa <desousa.kaue@gmail.com>
 Repository: CRAN
-Date/Publication: 2025-07-07 11:10:02 UTC
+Date/Publication: 2025-07-07 12:10:02 UTC
