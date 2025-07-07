@@ -15,7 +15,7 @@ getDataCM(
   ...
 )
 
-\method{as.data.frame}{CM_list}(x, ..., tidynames = TRUE, pivot.wider = FALSE)
+\method{as.data.frame}{CM_list}(x, ..., tidynames = TRUE, pivot.wider = TRUE)
 }
 \arguments{
 \item{key}{character, the user's API key}
@@ -68,13 +68,13 @@ getDataCM(key = my_key,
           userowner = "gosset",
           server = "climmob3")
           
-# get in the wide format
+# get in the long format
 
 getDataCM(key = my_key,
           project = "breadwheat",
           userowner = "gosset",
           server = "climmob3",
-          pivot.wider = TRUE)
+          pivot.wider = FALSE)
 \dontshow{\}) # examplesIf}
 }
 \seealso{

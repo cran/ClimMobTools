@@ -62,10 +62,24 @@ print.CM_df = function(x, ...){
 #' @export
 print.CM_list = function(x, ...){
   
-  x = x[[1]]
+  summary_df = data.frame(
+    "Principal Investigator" = .safe_extract(x, c("project", "project_pi")),
+    "Country"                = .safe_extract(x, c("project", "project_cnty")),
+    "Creation Date"          = as.Date(.safe_extract(x, c("project", "project_creationdate"))),
+    "Technology Name"        = .safe_extract(x, c("combination", "elements", 1, "technology_name", 1)),
+    "Packages Generated"     = .safe_extract(x, c("project", "project_numobs")),
+    "Packages Distributed"   = if (!is.null(x$data)) nrow(x$data) else 0,
+    stringsAsFactors = FALSE)
   
-  print(x)
   
+  cat("\nClimMob project:", x$project$project_name, "\n")
+  cat("=====================================================\n")
+  for (name in names(summary_df)) {
+    cat(sprintf("%-25s: %s\n", name, summary_df[[name]]))
+  }
+  
+  # keep object return silent
+  invisible(x)  
 }
 
 #' Tail of data frame
